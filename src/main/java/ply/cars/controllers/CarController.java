@@ -8,6 +8,7 @@ import org.modelmapper.ConfigurationException;
 import org.modelmapper.MappingException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +25,8 @@ import ply.cars.exceptions.CarNotFoundException;
 import ply.cars.models.dtos.CarDTO;
 import ply.cars.models.entities.Car;
 
+
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 public class CarController {
     @Autowired

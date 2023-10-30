@@ -42,16 +42,13 @@ public class Car{
      * https://en.wikipedia.org/wiki/History_of_the_automobile
      */
     @Min(1886)
-    @Nullable
     // yearOfProduction
     private int yop;
 
     @Nonnull
-    @Pattern(regexp="^[A-Za-z0-9]{2,}$", message="Brand name is invalid (must match regexp \"^[A-Za-z0-9]{2,}$\")")
     private String brand;
 
     @Nonnull
-    @Pattern(regexp="^[A-Za-z0-9]{2,}$", message="Model name is invalid (must match regexp \"^[A-Za-z0-9]{2,}$\")")
     private String model;
 
     /* 

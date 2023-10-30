@@ -38,14 +38,14 @@ public class CarService {
     public List<Car> filterNonDeleted(
         int minYop,
         int maxYop,
-        String registrationPart,
+        String registration,
         String brand,
         String model
     ){
         return carRepository.filter(
             minYop, 
             maxYop, 
-            registrationPart, 
+            registration,
             brand, 
             model)
         .stream()

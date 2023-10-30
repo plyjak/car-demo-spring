@@ -42,7 +42,7 @@ public class CarController {
     List<CarDTO> getAll(
         @RequestParam(defaultValue="-1") int minYop,
         @RequestParam(defaultValue="-1") int maxYop,
-        @RequestParam(defaultValue="") String registrationPart,
+        @RequestParam(defaultValue="") String registration,
         @RequestParam(defaultValue="") String brand,
         @RequestParam(defaultValue="") String model
     ){
@@ -50,8 +50,8 @@ public class CarController {
             .filterNonDeleted(
                 minYop,
                 maxYop,
-                registrationPart.isEmpty() ? null : registrationPart, 
-                brand.isEmpty() ? null : brand, 
+                registration.isEmpty() ? null : registration,
+                brand.isEmpty() ? null : brand,
                 model.isEmpty() ? null : model)
             .stream()
             .map(it -> modelMapper.map(it, CarDTO.class))

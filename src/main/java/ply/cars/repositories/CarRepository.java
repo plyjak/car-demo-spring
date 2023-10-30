@@ -19,19 +19,20 @@ public interface CarRepository extends JpaRepository<Car, Long> {
      * purposes only.
      */
 
+
     @Query("SELECT c " + 
-        "FROM Car c " + 
-        "WHERE " + 
-        "(:minYop = -1 OR c.yop >= :minYop) AND " + 
-        "(:maxYop = -1 OR c.yop <= :maxYop) AND " + 
-        "(:registrationPart IS NULL OR c.registration LIKE %:registrationPart%) AND " + 
-        "(:brand IS NULL OR c.brand = :brand) AND " + 
-        "(:model IS NULL OR c.model = :model)"
-    )
+            "FROM Car c " +
+            "WHERE " +
+            "(:minYop = -1 OR c.yop >= :minYop) AND " +
+            "(:maxYop = -1 OR c.yop <= :maxYop) AND " +
+            "(:registration IS NULL OR c.registration LIKE %:registration%) AND " +
+            "(:brand IS NULL OR c.brand = :brand) AND " +
+            "(:model IS NULL OR c.model = :model)")
+
     public List<Car> filter(
         int minYop,
         int maxYop,
-        String registrationPart,
+        String registration,
         String brand,
         String model
     );

@@ -30,8 +30,8 @@ public class Car{
 
     @Nonnull
     @Column(unique=true)
-    @Pattern(regexp="^[A-Z0-9]{6}$", message="In this demo car registration numbers must match regexp pattern \"^[A-Z0-9]{6}$\".")
-    private String registration;
+    @Pattern(regexp="^[A-Z0-9]{6}$", message="In this demo car plate number numbers must match regexp pattern \"^[A-Z0-9]{6}$\".")
+    private String plates;
 
     /*
      * The first modern car—a practical, marketable automobile 

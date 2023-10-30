@@ -25,14 +25,14 @@ public interface CarRepository extends JpaRepository<Car, Long> {
             "WHERE " +
             "(:minYop = -1 OR c.yop >= :minYop) AND " +
             "(:maxYop = -1 OR c.yop <= :maxYop) AND " +
-            "(:registration IS NULL OR c.registration LIKE %:registration%) AND " +
+            "(:plates IS NULL OR c.plates LIKE %:plates%) AND " +
             "(:brand IS NULL OR c.brand = :brand) AND " +
             "(:model IS NULL OR c.model = :model)")
 
     public List<Car> filter(
         int minYop,
         int maxYop,
-        String registration,
+        String plates,
         String brand,
         String model
     );

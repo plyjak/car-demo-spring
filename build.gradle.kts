@@ -31,8 +31,6 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("org.modelmapper:modelmapper:3.0.0")
 	implementation("javax.validation:validation-api:2.0.1.Final")
-	implementation("org.apache.logging.log4j:log4j-api:2.21.1")
-	implementation("org.apache.logging.log4j:log4j-core:2.21.1")
 }
 
 tasks.withType<Test> {

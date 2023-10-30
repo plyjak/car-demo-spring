@@ -42,7 +42,7 @@ public class CarController {
     List<CarDTO> getAll(
         @RequestParam(defaultValue="-1") int minYop,
         @RequestParam(defaultValue="-1") int maxYop,
-        @RequestParam(defaultValue="") String registration,
+        @RequestParam(defaultValue="") String plates,
         @RequestParam(defaultValue="") String brand,
         @RequestParam(defaultValue="") String model
     ){
@@ -50,7 +50,7 @@ public class CarController {
             .filterNonDeleted(
                 minYop,
                 maxYop,
-                registration.isEmpty() ? null : registration,
+                plates.isEmpty() ? null : plates,
                 brand.isEmpty() ? null : brand,
                 model.isEmpty() ? null : model)
             .stream()
@@ -73,7 +73,7 @@ public class CarController {
     CarDTO updateCar(@RequestBody CarDTO newCarDTO, @PathVariable Long id){
         return carService.findByIdNonDeleted(id)
             .map(it -> {
-                it.setRegistration(newCarDTO.getRegistration());
+                it.setPlates(newCarDTO.getPlates());
                 it.setYop(newCarDTO.getYop());
                 it.setModel(newCarDTO.getModel());
                 it.setBrand(newCarDTO.getBrand());
